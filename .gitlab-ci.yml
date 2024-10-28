@@ -1,0 +1,12 @@
+# Đây là một pipeline cho GitLab Pages
+pages:
+  stage: deploy
+  script:
+    - mkdir public # Tạo thư mục public để chứa file
+    - cp index.html public/ # Sao chép file index.html vào thư mục public
+    - cp index.css public/ # Sao chép file index.css vào thư mục public
+    - cp font.css public/ # Sao chép file font.css vào thư mục public
+    - cp -r images public/ # Sao chép thư mục images vào thư mục public
+  artifacts:
+    paths:
+      - public # Định nghĩa thư mục chứa file để GitLab Pages phục vụ
