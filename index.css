@@ -35,7 +35,7 @@ a {
 
 /* section 1 */
 .section-1 {
-    background-image: url('/images/section-1.jpg');
+    background-image: url('./images/section-1.jpg');
     background-size: cover;
     background-position: 50% 45%;
     background-repeat: no-repeat;
