@@ -17,22 +17,32 @@
 
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="custom.css">
 
 </head>
 <body>
     <div class="wrapper">
         <div class="section section-1">
             <div class="container">
-                <header class="d-flex align-items-center justify-content-between">
-                    <div class="logo lobster-regular">
+                <header class="d-flex align-items-center justify-content-between flex-wrap">
+                    <div class="logo lobster-regular mb-3">
                         Huy & Trang
                     </div>
                     <nav class="navbar raleway-regular">
                         <ul class="d-flex align-items-center justify-content-between">
-                            <li class="navbar-item me-5"><a href="">Wedding Information</a></li>
-                            <li class="navbar-item me-5"><a href="">About Us</a></li>
-                            <li class="navbar-item me-5"><a href="">Wedding Album</a></li>
-                            <li class="navbar-item"><a href="">Contact Us</a></li>
+                            <li class="navbar-item me-5 scrollLink" data-target="information">
+                                <a href="">Wedding Information</a>
+                            </li>
+                            <li class="navbar-item me-5 scrollLink" data-target="about-us">
+                                <a href="" >About Us</a>
+                            </li>
+                            <li class="navbar-item me-5 scrollLink" data-target="album">
+                                <a href="">Wedding Album</a>
+                            </li>
+                            <li class="navbar-item scrollLink" data-target="contact">
+                                <a href="">Contact Us</a>
+                            </li>
                         </ul>
                     </nav>
                 </header> 
@@ -44,7 +54,7 @@
             </div>
         </div>
 
-        <div class="section section-2">
+        <div class="section section-2" id="information">
             <div class="container">
                 <div class="content">
                     <div class="header-content faustina-regular">
@@ -52,7 +62,7 @@
                     </div>
                     <div class="main-content">
                         <div class="wellcome-list row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-12">
                                 <div class="wellcome-items">
                                     <div class="image-content">
                                         <img src="./images/section-2-wellcome-1.jpg" alt="">
@@ -69,7 +79,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-12">
                                 <div class="wellcome-items">
                                     <div class="image-content">
                                         <img src="./images/section-2-wellcome-2.jpg" alt="">
@@ -79,26 +89,26 @@
                                             location
                                         </div>
                                         <div class="detail-content-desc raleway-regular">
-                                            <p class="mb-1">CTM Palace - 131 Nguyễn Phong Sắc</p>
-                                            <p class="mb-1">Nhà gái - 204B Tôn Đức Thắng</p>
-                                            <p>Nhà trai - 35A ngõ 218 Lạc Long Quân </p>
+                                            <p class="mb-1 wrap-text">CTM Palace - 131 Nguyễn Phong Sắc</p>
+                                            <p class="mb-1 wrap-text">Nhà gái - 204B Tôn Đức Thắng</p>
+                                            <p class="wrap-text">Nhà trai - 35A ngõ 218 Lạc Long Quân </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-12">
                                 <div class="wellcome-items">
                                     <div class="image-content">
                                         <img src="./images/section-2-wellcome-3.jpg" alt="">
                                     </div>
-                                    <div class="detail-content">
-                                        <div class="detail-content-title">
+                                    <div class="detail-content wrap-text">
+                                        <div class="detail-content-title wrap-text">
                                             Information
                                         </div>
                                         <div class="detail-content-desc raleway-regular">
-                                            <p class="mb-2">11h00 AM | Saturday |</p>
-                                            <p class="mb-2">16/11/2024</p>
-                                            <p>11h | Thứ bảy | 16/11/2024</p>
+                                            <p class="mb-2 wrap-text">11h00 AM | Saturday |</p>
+                                            <p class="mb-2 wrap-text">16/11/2024</p>
+                                            <p class="wrap-text">11h | Thứ bảy | 16/11/2024</p>
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +126,7 @@
             
         </div>
 
-        <div class="section section-3">
+        <div class="section section-3" id="about-us">
             <div class="container">
                 <div class="decor-section">
                     <div class="content">
@@ -237,7 +247,7 @@
             </div>
         </div>
 
-        <div class="section section-6">
+        <div class="section section-6" id="album">
             <div class="container">
                 <div class="decor-section">
                     <div class="content">
@@ -356,7 +366,7 @@
             <div class="container">
                 <div class="decor-section">
                     <div class="content">
-                        <div class="header-content faustina-regular">
+                        <div class="header-content faustina-regular above-decor">
                             Our Memories
                         </div>
                         <div class="main-content">
@@ -429,7 +439,6 @@
                     <div class="decor-2">
                         <img src="./images/decor-2.jpg" alt="">
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -553,6 +562,54 @@
                 </div>
             </div>
         </div>
+
+        <div class="section section-11">
+            <div class="content">
+                <div class="main-content">
+                    <div class="img-background">
+                        <div class="wrap-img">
+                            <img src="./images/section-11-background.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="decor-section">
+                    <div class="wrap-footer">
+                        <div class="footer-title lobster-regular">Quang Huy & Huyền Trang</div>
+                        <div class="footer-desc raleway-regular">
+                            <p>Sự hiện diện của quý vị là niềm vinh hạnh cho gia đình chúng tôi.</p>
+                            <p>Chân thành cảm ơn!</p>
+                        </div>
+                    </div>
+                    <div class="decor-4">
+                        <img src="./images/decor-3.jpg" alt="">
+                    </div>
+                    <div class="decor-1">
+                        <img src="./images/decor-1.jpg" alt="">
+                    </div>
+                    <div class="decor-2">
+                        <img src="./images/decor-1.jpg" alt="">
+                    </div>
+                    <div class="decor-3">
+                        <img src="./images/decor-2.jpg" alt="">
+                    </div>
+                    <div class="decor-5">
+                        <img src="./images/decor-1.jpg" alt="">
+                    </div>
+                    <div class="decor-6">
+                        <img src="./images/decor-2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            From Huycan with love <3
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -561,13 +618,23 @@
 
 
     <script>
-        if ($('.slide-album').length > 0) {
-            $('.slide-album').slick({
-                lazyLoad: 'ondemand',
-                slidesToShow: 3,
-                slidesToScroll: 1
+        $(document).ready(function() {
+            if ($('.slide-album').length > 0) {
+                $('.slide-album').slick({
+                    lazyLoad: 'ondemand',
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                });
+            }
+
+            $(".scrollLink").click(function(event) {
+                event.preventDefault();
+                let target = $(this).attr("data-target")
+                $("html, body").animate({
+                    scrollTop: $(`#${target}`).offset().top
+                }, 1000);
             });
-        }
+        });
     </script>
 </body>
 </html>
