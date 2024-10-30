@@ -164,17 +164,18 @@ a {
 .section-2 .wellcome-list .col-lg-4:nth-child(2) .wellcome-items .image-content {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
 }
 
 .section-2 .wellcome-list .col-lg-4:nth-child(3) .wellcome-items .image-content {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
 }
 
 .section-2 .wellcome-list .col-lg-4:nth-child(1) .wellcome-items .image-content img {
     height: 100%;
+    transform: scale(1.5);
     /* height: 100%; */
 }
 
@@ -184,6 +185,8 @@ a {
 
 .section-2 .wellcome-list .col-lg-4:nth-child(3) .wellcome-items .image-content img {
     height: 100%;
+    transform: scale(1.5);
+
 }
 
 
@@ -267,7 +270,17 @@ a {
     align-items: center;
 }
 
+.section-3 .about-list .about-items .wrap-img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .section-3 .about-list .about-items img {
+    transform: scale(1.25);
     height: 100%;
 }
 
@@ -560,25 +573,24 @@ a {
     text-align: right;
 }
 
-.section-6 .slide-album {
-
+.section-6 .slide-album-border {
+    padding: 0 30px;
 }
 
 .section-6 .slide-album {
     width: 100%;
-    /* height: 100%; */
     margin-top: 20px;
     border: 2px solid black;
     /* border-right: 2px solid black; */
     border-right: none;
     border-left: none;
-    border-bottom: none;
     padding-right: 2px;
 }
 
 .section-6 .slide-album .slide-item {
     width: 100%;
-    height: 450px;
+    height: 430px;
+    /* height: 100%; */
 }
 
 .section-6 .slide-album .slide-item .wrap-border { 
@@ -595,12 +607,12 @@ a {
     align-items: center;
     margin-right: 5px;
     border-right: 2px solid black;
-    border-left: 2px solid black;
     border-bottom: 2px solid black;
 }
 
 .section-6 .slide-album .slide-item .wrap-img img {
     width: 100%;
+    height: fit-content;
     transform: scale(1.25);
 }
 
@@ -733,6 +745,7 @@ a {
 
 .section-7 .memory-items .body-item .wrap-img img {
     height: 100%;
+    transform: scale(1.5);
 }
 
 .section-7 .decor-1 {
@@ -836,8 +849,8 @@ a {
 }
 
 .section-8 .album-main {
-    /* width: 100%; */
-    height: 706px;    
+    height: 100%;
+    /* height: 706px;     */
     padding: 0px 20px;
 }
 

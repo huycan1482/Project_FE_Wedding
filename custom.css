@@ -3,22 +3,22 @@
 }
 
 .slick-arrow.slick-next {
-    right: 0;
+    right: -16px;
     transform: none;
 }
 
 .slick-arrow.slick-next:before {
     color: black;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .slick-arrow.slick-prev {
-    left: 0;
+    left: -32px;
     transform: none;
 
 }
 
 .slick-arrow.slick-prev:before {
     color: black;
-    font-size: 25px;
+    font-size: 35px;
 }
