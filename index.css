@@ -5,10 +5,20 @@
 
 ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+body { 
+    font-family: unset;
 }
 
 .decor-section {
@@ -31,6 +41,28 @@ a {
     -webkit-box-orient: vertical;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(243, 244, 231);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+
+/* style */
+
 .section {
     padding: 50px 0;
     width: 100%;
@@ -40,7 +72,8 @@ a {
 }
 
 .section-1 {
-    height: calc(100vh - 100px);
+    /* height: calc(100vh - 100px); */
+    height: 100vh;
 }
 
 .section-2, .section-3, .section-4, .section-5, .section-6, .section-7, .section-8, .section-9, .section-10, .section-11 {
@@ -60,6 +93,7 @@ a {
     background-size: cover;
     background-position: 50% 45%;
     background-repeat: no-repeat;
+    /* height: 100vh; */
 }
 
 .section-1 header .logo {
@@ -68,7 +102,7 @@ a {
     text-shadow: rgba(0, 0, 0, 0.6) 0px 1.17156px 8.78673px;
 }
 
-.section-1 .navbar {
+.section-1 .navbar-web {
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 15px 20px;
@@ -77,9 +111,20 @@ a {
     -webkit-backdrop-filter: blur(10px);
 }
 
-.section-1 .navbar .navbar-item a {
+.section-1 .navbar-web .navbar-item a {
     color: rgb(248, 248, 242);
     font-weight: 700;
+}
+
+.section-1 .active-navbar {
+    text-shadow: rgba(0, 0, 0, 0.6) 0px 3.27304px 24.5478px;
+    margin-right: 30px;
+    display: none;
+}
+
+.section-1 .active-navbar img {
+    width: 30px;
+    height: 30px;
 }
 
 .section-1 .title {
@@ -88,6 +133,52 @@ a {
     position: absolute;
     bottom: 18px;
     text-shadow: rgba(0, 0, 0, 0.6) 0px 3.27304px 24.5478px;
+}
+
+.section-1 .navbar-mobile {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    background-color: rgb(243, 244, 231);
+    transition: .5s all;
+}
+
+.section-1 .navbar-mobile.active {
+    width: 70%;
+    transition: .5s all;
+}
+
+.section-1 .navbar-overlay {
+    visibility: hidden;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    transition: opacity .25s ease-in;
+    background-color: rgba(45, 45, 45, 0.65);
+}
+
+.section-1 .navbar-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.section-1 .navbar-mobile .navbar-item  {
+    padding: 10px 20px;
+    width: 90%;
+}
+
+.section-1 .navbar-mobile .navbar-item a {
+    font-weight: 500;
+    font-style: normal;
+    color: rgb(28, 44, 27);
+    font-size: 20px;
 }
 
 /* section 2 */
@@ -192,7 +283,7 @@ a {
 
 .section-2 .wellcome-list .wellcome-items .detail-content {
     background-color: rgb(192, 198, 179);
-    height: calc(185px - 20px);
+    height: 200px;
     width: 100%;
     text-align: center;
     padding: 20px 0 0;
@@ -581,15 +672,13 @@ a {
     width: 100%;
     margin-top: 20px;
     border: 2px solid black;
-    /* border-right: 2px solid black; */
     border-right: none;
-    border-left: none;
-    padding-right: 2px;
+    border-bottom: none;
 }
 
 .section-6 .slide-album .slide-item {
     width: 100%;
-    height: 430px;
+    height: 410px;
     /* height: 100%; */
 }
 
@@ -745,7 +834,7 @@ a {
 
 .section-7 .memory-items .body-item .wrap-img img {
     height: 100%;
-    transform: scale(1.5);
+    transform: scale(1);
 }
 
 .section-7 .decor-1 {
@@ -1094,6 +1183,7 @@ a {
 }
 
 .section-11 .main-content {
+    position: relative;
 }
 
 .section-11 .main-content .img-background {
@@ -1113,6 +1203,29 @@ a {
 .section-11 .img-background .wrap-img img {
     width: 100%;
     margin-bottom: 20%;
+}
+
+.section-11 .gift {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 30px;
+    top: 30px;
+    font-size: 100px;
+    color: #FFF;
+    font-weight: 700;
+    text-shadow: rgba(0, 0, 0, 0.3) 0px 3.45115px 13.7701px;
+    filter: opacity(1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-11 .gift img {
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
 }
 
 /* footer */
@@ -1210,4 +1323,20 @@ a {
 .footer .decor-6 img {
     width: 350px;
     height: 410px;
+}
+
+.footer-note {
+    text-align: center;
+    color: rgb(42, 64, 45);
+    background-color: rgb(243, 244, 231);
+}
+
+.modal .modal-gift {
+    text-align: center;
+    font-weight: 700;
+}
+
+.modal .modal-gift img {
+    width: 170px;
+    height: 170px;
 }

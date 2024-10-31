@@ -10,12 +10,16 @@
         transform: none;
     }
 
-    .container {
+    .container { 
         padding: 0 !important;
     }
 
     .section {
         padding: 20px 0;
+    }
+
+    .section-1 .active-navbar {
+        display: block;
     }
 
     .section-1, .section-2 {
@@ -243,6 +247,16 @@
 
     .section-10 .header-title {
         font-size: 30px;
+    }
+
+    /* section 11 */
+    .section-11 .gift { 
+        font-size: 50px;
+    }
+
+    .section-11 .gift img { 
+        width: 100px;
+        height: 100px;
     }
 
 }
