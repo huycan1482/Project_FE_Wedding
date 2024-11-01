@@ -671,9 +671,9 @@ body {
 .section-6 .slide-album {
     width: 100%;
     margin-top: 20px;
-    border: 2px solid black;
+    /* border: 2px solid black;
     border-right: none;
-    border-bottom: none;
+    border-bottom: none; */
 }
 
 .section-6 .slide-album .slide-item {
@@ -688,21 +688,19 @@ body {
 }
 
 .section-6 .slide-album .slide-item .wrap-img {
-    width: calc(100% - 2px);
+    width: calc(100% - 4px);
     height: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 5px;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
 }
 
 .section-6 .slide-album .slide-item .wrap-img img {
     width: 100%;
-    height: fit-content;
-    transform: scale(1.25);
+    transform: scale(1.5);
 }
 
 .section-6 .slide-album .slide-item.slide-item-3 .wrap-img { 
@@ -1227,6 +1225,10 @@ body {
     width: 200px;
     height: 200px;
 }
+
+.section-11 .gift .message {
+    font-size: 100px;
+}   
 
 /* footer */
 .footer {

@@ -56,19 +56,19 @@
                     </div>
                     <div class="navbar-mobile">
                         <ul class="d-flex align-items-start justify-content-between flex-column">
-                            <li class="navbar-item me-5 raleway-regular" data-click="menuToggle" style="text-align: end;">
+                            <li class="navbar-item me-5 raleway-regular" data-click="menuToggle" style="text-align: end; width: 100%;">
                                 X
                             </li>
-                            <li class="navbar-item me-5 scrollLink faustina-regular" data-target="information">
+                            <li class="navbar-item me-5 scrollLink raleway-regular" data-target="information">
                                 <a class="wrap-text" href="">Wedding Information</a>
                             </li>
-                            <li class="navbar-item me-5 scrollLink faustina-regular" data-target="about-us">
+                            <li class="navbar-item me-5 scrollLink raleway-regular" data-target="about-us">
                                 <a class="wrap-text" href="" >About Us</a>
                             </li>
-                            <li class="navbar-item me-5 scrollLink faustina-regular" data-target="album">
+                            <li class="navbar-item me-5 scrollLink raleway-regular" data-target="album">
                                 <a class="wrap-text" href="">Wedding Album</a>
                             </li>
-                            <li class="navbar-item scrollLink faustina-regular" data-target="contact">
+                            <li class="navbar-item scrollLink raleway-regular" data-target="contact">
                                 <a class="wrap-text" href="">Contact Us</a>
                             </li>
                         </ul>
@@ -157,7 +157,7 @@
         <div class="section section-3" id="about-us">
             <div class="container">
                 <div class="decor-section">
-                    <div class="content wow animate__animated animate__fadeInDown" data-wow-duration="3s">
+                    <div class="content wow animate__animated animate__fadeInUp" data-wow-duration="3s">
                         <div class="header-content faustina-regular above-decor">
                             About Us
                         </div>
@@ -552,7 +552,7 @@
                                         <input type="text" class="form-input raleway-regular" placeholder="Your Name">
                                         <input type="text" class="form-input raleway-regular" placeholder="Message">
                                         <div class="form-action">
-                                            <button class="form-button">Send Here!</button>
+                                            <button class="form-button raleway-regular">Send Here!</button>
                                         </div>
                                     </div>
                                 </div>
@@ -578,9 +578,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="map-img wow animate__animated animate__fadeInLeft" data-wow-duration="3s">
-                                        <div class="wrap-img">
-                                            <img src="./images/section-10-map-1.jpg" alt="" loading="lazy">
-                                        </div>
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4460.749944223999!2d105.78730827596313!3d21.042427880610433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab313282ca37%3A0x93c5760e067d47f4!2sCTM%20Palace!5e1!3m2!1svi!2s!4v1730476540995!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -606,10 +604,11 @@
                         </div>
                     </div>
                     <div class="gift faustina-regular">
-                        <div class="message me-3">Send love to us!</div>
-                        <div class="wrap-img" data-bs-toggle="modal" data-bs-target="#giftModal">
-                            <img src="./images/gift-box-2.jpg" alt="">
+                        <div class="message me-3">
+                                <span>Send love to us!</span>
+                                <span class="wrap-img" data-bs-toggle="modal" data-bs-target="#giftModal" style="cursor: pointer;">🧧</span>
                         </div>
+                        <!-- <img src="./images/gift-box-2.jpg" alt=""> -->
                     </div>
                 </div>
             </div>
@@ -648,7 +647,7 @@
         </div>
 
         <div class="footer-note raleway-regular">
-            From Huycan with love ❤️
+            From HuyCan with love ❤️
         </div>
 
         <div class="modal fade" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
@@ -656,13 +655,13 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="d-flex align-items-center justify-content-center">
-                            <div class="modal-gift m-3">
+                            <div class="modal-gift m-3 raleway-regular">
                                 <img src="./images/section-11-gift-1.jpg" alt="" loading="lazy">
-                                <p class="m-0">Cao Nguyên Huyền Trang</p>
+                                <p class="m-0">Cao Nguyễn Huyền Trang</p>
                                 <p class="m-0">BIDV</p>
                             </div>
 
-                            <div class="modal-gift m-3">
+                            <div class="modal-gift m-3 raleway-regular">
                                 <img src="./images/section-11-gift-2.jpg" alt="" loading="lazy">
                                 <p class="m-0">Nguyễn Quang Huy</p>
                                 <p class="m-0">TECHCOMBANK</p>
@@ -683,50 +682,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
     <script>
-        $(document).ready(function() {
             new WOW().init();
 
-            if ($('.slide-album').length > 0) {
-                $('.slide-album').slick({
-                    lazyLoad: 'ondemand',
-                    autoplay: false,           // Bật tự động chuyển slide
-                    autoplaySpeed: 3000,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    responsive: [
-                        {
-                            breakpoint: 768, 
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 480, 
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        }
-                    ]
-                });
-            }
+            $(document).on('click', '[data-click="menuToggle"]', function (e) {
+                $('.navbar-mobile').toggleClass('active')
+                $('.navbar-overlay').toggleClass('active')
+            })
 
             $(window).on('load', function() {
                 $(".scrollLink").click(function(event) {
                     event.preventDefault();
                     let target = $(this).attr("data-target");
 
-                    // Sử dụng scrollIntoView thay vì animate
                     document.getElementById(target).scrollIntoView({ behavior: "smooth", block: "start" });
                 });
             })
 
-            $(this).on('click', '[data-click="menuToggle"]', function (e) {
-                $('.navbar-mobile').toggleClass('active')
-                $('.navbar-overlay').toggleClass('active')
-            })
-        });
+            $('.slide-album').slick({
+                autoplay: false,
+                autoplaySpeed: 3000,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 768, 
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480, 
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+            
     </script>
 </body>
 </html>
