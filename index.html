@@ -540,10 +540,10 @@
                                         wedding day!?
                                     </div>
                                     <div class="form-options raleway-regular">
-                                        <div class="options">
+                                        <div class="options" data-click="select-option">
                                             Yes
                                         </div>
-                                        <div class="options">
+                                        <div class="options option-hide" data-click="select-option">
                                             No
                                         </div>
                                     </div>
@@ -671,6 +671,16 @@
                 </div>
             </div>
         </div>
+
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="myToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body raleway-regular">
+                    </div>
+                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -682,45 +692,108 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
     <script>
-            new WOW().init();
+        const myToast = new bootstrap.Toast($('#myToast'), {
+            delay: 4000
+        });
+        let bussy = false;
+        new WOW().init();
 
-            $(document).on('click', '[data-click="menuToggle"]', function (e) {
-                $('.navbar-mobile').toggleClass('active')
-                $('.navbar-overlay').toggleClass('active')
-            })
+        $(document).on('click', '[data-click="menuToggle"]', function (e) {
+            $('.navbar-mobile').toggleClass('active')
+            $('.navbar-overlay').toggleClass('active')
+        })
 
-            $(window).on('load', function() {
-                $(".scrollLink").click(function(event) {
-                    event.preventDefault();
-                    let target = $(this).attr("data-target");
+        $(document).on('click', '[data-click="send-mail"]', function (e) {
+            if (bussy) return 0
+            bussy = true
+            $('#loading-overlay').addClass('active')
 
-                    document.getElementById(target).scrollIntoView({ behavior: "smooth", block: "start" });
-                });
-            })
+            $(`.error-text`).text('')
 
-            $('.slide-album').slick({
-                autoplay: false,
-                autoplaySpeed: 3000,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [
-                    {
-                        breakpoint: 768, 
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 480, 
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
+            let data = {
+                "name": $('input[name="name"]').val(),
+                "message": $('input[name="message"]').val()
+            }
+
+            $.ajax({
+                url: '/send-mail',
+                type: 'POST',
+                data: data,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    if (response.success) {
+                        $(`#myToast .toast-body`).text(response.message)
+                        myToast.show(); 
+                        $('.section-9').fadeOut()
                     }
-                ]
+
+                    $('#loading-overlay').removeClass('active')
+                    bussy = false
+                },
+                error: function(xhr, status, error) {
+                    let responseJSON = xhr.responseJSON
+                    if (responseJSON.errors) {
+                        $.each(responseJSON.errors, function (key, val) { 
+                            $(`.error-text.error-${key}`).text(val[0])
+                        });
+                    }
+
+                    $(`#myToast .toast-body`).text("Gửi lời chúc không thành công, hãy thử lại")
+                    myToast.show(); 
+
+                    $('#loading-overlay').removeClass('active')
+                    bussy = false
+                }
             });
+
             
+        })
+
+        $(document).on('click', '[data-click="select-option"]', function (e) {
+            let ele = $(this)
+            if (ele.hasClass('option-hide')) {
+                ele.removeClass('bell');
+
+                setTimeout(function() {
+                    ele.addClass('bell');
+                }, 10);
+            } else {
+                ele.addClass('option-selected')
+            }
+        })
+
+        $(window).on('load', function() {
+            $(".scrollLink").click(function(event) {
+                event.preventDefault();
+                let target = $(this).attr("data-target");
+                document.getElementById(target).scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        })
+
+        $('.slide-album').slick({
+            autoplay: false,
+            autoplaySpeed: 3000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 768, 
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480, 
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
     </script>
 </body>
 </html>
